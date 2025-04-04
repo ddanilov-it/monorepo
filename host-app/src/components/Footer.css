@@ -1,0 +1,31 @@
+.footer {
+  padding: 12px 0;
+  background-color: #2d3748;
+  /* gray-800 */
+  color: white;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #d1d5db;
+  /* gray-300 */
+}

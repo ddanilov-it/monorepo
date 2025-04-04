@@ -1,0 +1,87 @@
+/* Общие стили для контейнера */
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  max-width: 1200px;
+}
+
+/* Заголовок блока */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-email {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Заголовок страницы */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Таблица клиентов */
+.table-container {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  background-color: #1976d2;
+  color: white;
+}
+
+.table-header-cell {
+  padding: 12px;
+  text-align: center;
+}
+
+.table-row:hover {
+  background-color: #f5f5f5;
+}
+
+.table-cell {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}

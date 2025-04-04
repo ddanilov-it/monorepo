@@ -5,13 +5,12 @@ const path = require('path');
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        publicPath: 'http://localhost:3000/',
+        publicPath: 'http://localhost:3001/',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     devServer: {
-        port: 3000,
-        historyApiFallback: true,
+        port: 3001,
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
@@ -19,36 +18,34 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/i,
-                use: ['style-loader', 'css-loader', 'postcss-loader'],
-            },
-            {
                 test: /\.(ts|tsx)$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.css$/, // 👈 добавлено
+                use: ['style-loader', 'css-loader'],
+                exclude: /node_modules\/(?!(react-datepicker)\/).*/, // ⚠️ разрешить react-datepicker
             },
         ],
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'host',
-            remotes: {
-                mfeOne: 'mfeOne@http://localhost:3001/remoteEntry.js',
-                mfeTwo: 'mfeTwo@http://localhost:3002/remoteEntry.js',
-                // mfeThree: 'mfeThree@http://localhost:3003/remoteEntry.js'
+            name: 'mfeOne',
+            filename: 'remoteEntry.js',
+            exposes: {
+                './App': './src/App',
             },
             shared: {
                 react: {
                     singleton: true,
                     requiredVersion: '^19.1.0',
                     strictVersion: true,
-                    eager: true,
                 },
                 'react-dom': {
                     singleton: true,
                     requiredVersion: '^19.1.0',
                     strictVersion: true,
-                    eager: true,
                 },
             },
         }),

@@ -33,6 +33,7 @@ const AuthForm: React.FC = () => {
         response = await login(email, password);
         const token = response.token;
         if (token) {
+          console.log(token);
           authLogin(token);
           navigate('/home');
         }
