@@ -70,10 +70,6 @@ const SubscriptionTable: React.FC = () => {
   return (
     <div className="container">
       {/* Блок пользователя и кнопка "Выйти" */}
-      <div className="header">
-        <div className="user-email">Пользователь: {userEmail}</div>
-        
-      </div>
 
       <h1 className="title">Управление клиентами и абонементами</h1>
 

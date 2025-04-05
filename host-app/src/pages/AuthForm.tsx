@@ -36,6 +36,7 @@ const AuthForm: React.FC = () => {
           console.log(token);
           authLogin(token);
           navigate('/home');
+          window.location.reload();
         }
       }
     } catch (err: any) {

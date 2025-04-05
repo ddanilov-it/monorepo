@@ -24,6 +24,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsAuthenticated(false);
     window.location.href = "/";
   };
+  
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>

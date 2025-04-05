@@ -1,16 +1,16 @@
+/* Убедитесь, что html и body занимают всю высоту экрана */
+html, body {
+  height: 100%;
+  margin: 0; /* Убираем стандартный отступ браузера */
+}
+
+
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 200vh;
+  min-height: 100vh; /* Занимает минимум 100% высоты экрана */
 }
 
 .content {
-  flex: 1;
-}
-
-.footer {
-  padding: 12px 0;
-  background-color: #2d3748;
-  color: white;
-  text-align: center;
+  flex: 1; /* Занимает оставшееся пространство */
 }

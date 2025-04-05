@@ -53,6 +53,24 @@ const ClientForm: React.FC<ClientFormProps> = ({ onClientAdded }) => {
       await addSubscription(subscriptionData);
       console.log("Подписка успешно добавлена!");
 
+      // После успешного добавления, очищаем поля формы
+      setNewClient({
+        firstName: '',
+        lastName: '',
+        patronymic: '',
+        email: '',
+        phone: '',
+      });
+      setNewSubscription({
+        clientId: 0,
+        status: 'Активен',
+        startDate: '',
+        endDate: '',
+      });
+
+      // Показываем сообщение об успешном добавлении данных
+      alert('Клиент успешно добавлен.');
+
       onClientAdded(); // Update the table
     } catch (error) {
       console.error("Ошибка при добавлении клиента:", error);
